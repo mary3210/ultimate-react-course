@@ -9,24 +9,64 @@ const seedData = [
 ];
 
 function App() {
+  const [meals, setMeals] = useState(seedData)
   return (
     <div className="App">
-      <MealList />
+      <MealList meals={meals} />
+      <AddMeal />
     </div>
+
   );
 }
 
-function MealList() {
-  console.log(seedData)
+function MealList({ meals }) {
+
   return (
     <div>
-      <p> </p>
-      <p>{seedData[0].time}</p>
+      <Meal meals={meals} />
+
     </div>
 
   )
 }
 
+function Meal({ meals }) {
+  console.log(meals)
+  return (
+    <div>
+      {meals.map((meal) =>
+        <div>
+          <p>Time: {meal.time}</p>
+          <p>Name of Meal: {meal.mealName}</p>
+          <p>Ingredients: {meal.ingredients}</p>
 
+        </div>)}
+    </div>
+  )
+}
+
+function AddMeal() {
+  return (
+    <form>
+      <div>
+        <label>Meal Time</label>
+        <select>
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+
+        </select>
+      </div>
+      <div>
+        <label>Meal Name</label>
+        <input type="text"></input>
+      </div>
+      <div>
+        <label>Ingredients</label>
+        <textarea size="300" type="text"></textarea>
+      </div>
+    </form>
+  )
+}
 
 export default App;
