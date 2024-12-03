@@ -38,8 +38,35 @@ code {
     color: white;
 }
 
+.deleteMealBtn {
+    border-radius: 5px;
+    background-color: rgb(131, 31, 1);
+    border: none;
+    padding: 7px 15px;
+    text-align: center;
+    color: white;
+}
+
 .mealForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.mealForm {
+    background-color: darkcyan;
+    padding: 15px;
+    color: white;
+}
+
+.mealForm input,
+textarea,
+select {
+    border: none;
+    margin: 10px;
+}
+
+.mealForm input {
+    padding: 5px;
+    border-radius: 3px;
 }
